@@ -22,6 +22,10 @@ def get_server_parameters(arguments=None):
     parser.add_option("-l", "--log-level", dest="log_level", default="warning", help = "The log level to be used. Possible values are: debug, info, warning, error, critical or notset. [default: %default]." )
     parser.add_option("-a", "--app", dest="app", default=None, help = "A custom app to use for this thumbor server in case you subclassed ThumborServiceApp [default: %default]." )
 
+    parser.add_option("-U", "--enable-putter", type="store_true", default=False, help="enable putter [default: %default].")
+    parser.add_option("-P", "--put-port", type="int", dest="port", default=9999, help = "The port to run this thumbor putter instance at [default: %default]." )
+    parser.add_option("-I", "--put-ip", dest="ip", default="127.0.0.1", help = "The host address to run this thumbor putter instance at [default: %default]." )
+
     (options, args) = parser.parse_args(arguments)
 
     port = options.port
@@ -36,4 +40,3 @@ def get_server_parameters(arguments=None):
                             keyfile=keyfile,
                             log_level=log_level,
                             app_class=options.app)
-
