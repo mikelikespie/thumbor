@@ -120,6 +120,12 @@ Config.define('REDIS_STORAGE_SERVER_HOST', 'localhost')
 Config.define('REDIS_STORAGE_SERVER_PORT', 6379)
 Config.define('REDIS_STORAGE_SERVER_DB', 0)
 
+# S3 STORAGE OPTIONS
+Config.define('S3_URL', 'https://s3.amazonaws.com')
+Config.define('S3_SECRET_ACCESS_KEY', None)
+Config.define('S3_ACCESS_KEY_ID', None)
+Config.define('S3_BUCKET', None)
+
 # MIXED STORAGE OPTIONS
 Config.define('MIXED_STORAGE_FILE_STORAGE', 'thumbor.storages.no_storage')
 Config.define('MIXED_STORAGE_CRYPTO_STORAGE', 'thumbor.storages.no_storage')
